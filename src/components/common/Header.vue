@@ -22,6 +22,11 @@
         >
           <SvgIcon :name="isDark ? 'svg-moon' : 'svg-sun'" size="20px" :color="isDark ? '#fff' : '#111'" />
         </div>
+        <a href="https://github.com/helloknown/qrcode-demo" target="_blank"
+          class="cursor-pointer inline-flex items-center whitespace-nowrap shrink-0 justify-center text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 border border-solid border-#e4e4e7 shadow-sm font-medium hover:bg-#e4e4e7 hover:dark:bg-#222 h-8 px-3 py-2 rounded-full"
+        >
+          <SvgIcon name="svg-github" size="20px" :color="isDark ? '#fff' : '#111'" />
+        </a>
       </div>
     </div>
   </header>

@@ -210,7 +210,7 @@
   const model = ref({
     errorCorrectLevel: '1',
     typeNumber: '-1',
-    data:'http://localhost:3000',
+    data:'https://linux.do',
     size: 200,
     margin: 2,
     useDynamicSize:true,

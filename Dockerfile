@@ -1,24 +1,8 @@
-# 使用 Node 作为基础镜像
-FROM node:20.10.0
+# 使用官方 Nginx 镜像作为基础镜像
+FROM nginx:latest
 
-# 设置工作目录
-WORKDIR /app
+# 将自定义的 Nginx 配置文件复制到容器中
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# 复制 package.json 和 package-lock.json
-COPY package.json .
-COPY package-lock.json .
-
-# 安装依赖
-RUN npm install
-
-# 复制整个项目到工作目录
-COPY . .
-
-# 构建项目
-RUN npm run build
-
-# 暴露端口
-# EXPOSE 3000
-
-# 启动应用
-CMD ["npm", "run", "serve"]
+# 将前端项目的静态文件复制到 Nginx 默认目录
+COPY dist /usr/share/nginx/html
