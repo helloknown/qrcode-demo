@@ -162,7 +162,15 @@
                   <label class="w-50% text-right mr-4">分割区域颜色:</label><n-color-picker v-model:value="positionMode.separatorColor" :show-preview="false"  size="small"/>
                 </div>
                 <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
-                  <label class="w-50% text-right mr-4">暗块颜色: </label><n-color-picker v-model:value="positionMode.darkBlockColor" :show-preview="false"  size="small" />
+                  <!-- <label class="w-50% text-right mr-4">暗块颜色: </label><n-color-picker v-model:value="positionMode.darkBlockColor" :show-preview="false"  size="small" /> -->
+                </div>
+              </n-form-item>
+              <n-form-item>                
+                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
+                  <label class="w-50% text-right mr-4">格式区域背景色:</label><n-color-picker v-model:value="positionMode.formatBackgroundColor" :show-preview="false"  size="small"/>
+                </div>
+                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
+                  <label class="w-50% text-right mr-4">格式码点颜色: </label><n-color-picker v-model:value="positionMode.darkBlockColor" :show-preview="false"  size="small" />
                 </div>
               </n-form-item>
               <n-form-item>
@@ -231,6 +239,7 @@
     typeNumberBackgroundColor: model.value.backgroundColor, // 版本信息区域背景色
     typeNumberForegroundColor: model.value.foregroundColor, // 版本信息码点颜色
     darkBlockColor: model.value.foregroundColor, // 暗块颜色
+    formatBackgroundColor: model.value.backgroundColor, // 格式区域背景颜色
   })
 
   const foregroundImage = ref({

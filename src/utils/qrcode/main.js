@@ -72,6 +72,7 @@ function UQRCode(options, canvasContext) {
   var _timingForegroundColor = this.timingForegroundColor = undefined; // 时序码点颜色，默认值跟随前景色
   var _typeNumberBackgroundColor = this.typeNumberBackgroundColor = undefined; // 版本信息区域背景色，默认值跟随背景色
   var _typeNumberForegroundColor = this.typeNumberForegroundColor = undefined; // 版本信息码点颜色，默认值跟随前景色
+  var _formatBackgroundColor = this.formatBackgroundColor = undefined; // 格式区域颜色，默认值跟随背景色
   var _darkBlockColor = this.darkBlockColor = undefined; // 暗块颜色，默认值跟随前景色
 
   /** 数据 */
@@ -421,6 +422,14 @@ function UQRCode(options, canvasContext) {
         _typeNumberForegroundColor = value;
       }
     },
+    formatBackgroundColor: {
+      get() {
+        return _formatBackgroundColor || this.backgroundColor;
+      },
+      set(value) {
+        _formatBackgroundColor = value;
+      }
+    },
     darkBlockColor: {
       get() {
         return _darkBlockColor || this.foregroundColor;
@@ -542,7 +551,7 @@ UQRCode.prototype.setOptions = function(options) {
     // }, true);
 
     /* rollup配置es6转es5后并未进行转换，故通过babel在线转换后替换 */
-    var _options$background, _options$background2, _options$background2$, _options$background3, _options$background3$, _options$background4, _options$background4$, _options$background5, _options$background5$, _options$background6, _options$background6$, _options$background7, _options$background7$, _options$background8, _options$background8$, _options$foreground, _options$foreground2, _options$foreground2$, _options$foreground3, _options$foreground3$, _options$foreground4, _options$foreground4$, _options$foreground5, _options$foreground5$, _options$foreground6, _options$foreground6$, _options$foreground7, _options$foreground7$, _options$foreground8, _options$foreground8$, _options$foreground9, _options$foreground9$, _options$foreground10, _options$foreground11, _options$foreground12, _options$foreground13, _options$foreground14, _options$foreground15, _options$foreground16, _options$foreground17, _options$positionProb, _options$positionDete, _options$positionProb2, _options$positionDete2, _options$separator, _options$positionAdju, _options$alignment, _options$positionAdju2, _options$alignment2, _options$timing, _options$timing2, _options$typeNumber, _options$minTypeNumber, _options$versionInfor, _options$typeNumber2, _options$versionInfor2, _options$darkBlock;
+    var _options$background, _options$background2, _options$background2$, _options$background3, _options$background3$, _options$background4, _options$background4$, _options$background5, _options$background5$, _options$background6, _options$background6$, _options$background7, _options$background7$, _options$background8, _options$background8$, _options$foreground, _options$foreground2, _options$foreground2$, _options$foreground3, _options$foreground3$, _options$foreground4, _options$foreground4$, _options$foreground5, _options$foreground5$, _options$foreground6, _options$foreground6$, _options$foreground7, _options$foreground7$, _options$foreground8, _options$foreground8$, _options$foreground9, _options$foreground9$, _options$foreground10, _options$foreground11, _options$foreground12, _options$foreground13, _options$foreground14, _options$foreground15, _options$foreground16, _options$foreground17, _options$positionProb, _options$positionDete, _options$positionProb2, _options$positionDete2, _options$separator, _options$positionAdju, _options$alignment, _options$positionAdju2, _options$alignment2, _options$timing, _options$timing2, _options$typeNumber, _options$minTypeNumber, _options$versionInfor, _options$typeNumber2, _options$versionInfor2, _options$format,_options$darkBlock;
     deepReplace(this, {
       data: options.data || options.text,
       dataEncode: options.dataEncode,
@@ -585,6 +594,7 @@ UQRCode.prototype.setOptions = function(options) {
       timingForegroundColor: options.timingForegroundColor || ((_options$timing2 = options.timing) === null || _options$timing2 === void 0 ? void 0 : _options$timing2.foregroundColor),
       typeNumberBackgroundColor: options.typeNumberBackgroundColor || ((_options$typeNumber = options.typeNumber) === null || _options$typeNumber === void 0 ? void 0 : _options$typeNumber.backgroundColor) || ((_options$versionInfor = options.versionInformation) === null || _options$versionInfor === void 0 ? void 0 : _options$versionInfor.backgroundColor),
       typeNumberForegroundColor: options.typeNumberForegroundColor || ((_options$typeNumber2 = options.typeNumber) === null || _options$typeNumber2 === void 0 ? void 0 : _options$typeNumber2.foregroundColor) || ((_options$versionInfor2 = options.versionInformation) === null || _options$versionInfor2 === void 0 ? void 0 : _options$versionInfor2.foregroundColor),
+      formatBackgroundColor: options.formatBackgroundColor || ((_options$format = options.format) === null || _options$format === void 0 ? void 0 : _options$format.backgroundColor),
       darkBlockColor: options.darkBlockColor || ((_options$darkBlock = options.darkBlock) === null || _options$darkBlock === void 0 ? void 0 : _options$darkBlock.color)
     }, true);
   }
