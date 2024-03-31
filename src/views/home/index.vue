@@ -159,27 +159,11 @@
               </n-form-item>
               <n-form-item>                
                 <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
-                  <label class="w-50% text-right mr-4">定位码点颜色:</label><n-color-picker v-model:value="positionMode.separatorColor" :show-preview="false"  size="small"/>
+                  <label class="w-50% text-right mr-4">分割区域颜色:</label><n-color-picker v-model:value="positionMode.separatorColor" :show-preview="false"  size="small"/>
                 </div>
                 <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
                   <label class="w-50% text-right mr-4">暗块颜色: </label><n-color-picker v-model:value="positionMode.darkBlockColor" :show-preview="false"  size="small" />
                 </div>
-              </n-form-item>
-              <n-form-item>
-                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
-                  <label class="w-50% text-right mr-4">版本信息区域背景色: </label><n-color-picker v-model:value="positionMode.typeNumberBackgroundColor" :show-preview="false"  size="small" />
-                </div>
-                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
-                  <label class="w-50% text-right mr-4">版本信息码点颜色: </label><n-color-picker v-model:value="positionMode.typeNumberForegroundColor" :show-preview="false"  size="small" />
-                </div>                          
-              </n-form-item>
-              <n-form-item>
-                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
-                  <label class="w-50% text-right mr-4">对齐区域背景色: </label><n-color-picker v-model:value="positionMode.positionAdjustBackgroundColor" :show-preview="false"  size="small" />
-                </div>
-                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
-                  <label class="w-50% text-right mr-4">对齐码点颜色: </label><n-color-picker v-model:value="positionMode.positionAdjustForegroundColor" :show-preview="false"  size="small" />
-                </div>                          
               </n-form-item>
               <n-form-item>
                 <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
@@ -189,7 +173,22 @@
                   <label class="w-50% text-right mr-4">时序码点颜色: </label><n-color-picker v-model:value="positionMode.timingForegroundColor" :show-preview="false"  size="small" />
                 </div>
               </n-form-item>
-              
+              <n-form-item>
+                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
+                  <label class="w-50% text-right mr-4">校正区域背景色: </label><n-color-picker v-model:value="positionMode.positionAdjustBackgroundColor" :show-preview="false"  size="small" />
+                </div>
+                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
+                  <label class="w-50% text-right mr-4">校正码点颜色: </label><n-color-picker v-model:value="positionMode.positionAdjustForegroundColor" :show-preview="false"  size="small" />
+                </div>                          
+              </n-form-item>
+              <n-form-item>
+                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
+                  <label class="w-50% text-right mr-4">版本信息区域背景色: </label><n-color-picker v-model:value="positionMode.typeNumberBackgroundColor" :show-preview="false"  size="small" />
+                </div>
+                <div class="<sm:flex-none md:f-b-c mr-4 w-50%">
+                  <label class="w-50% text-right mr-4">版本信息码点颜色: </label><n-color-picker v-model:value="positionMode.typeNumberForegroundColor" :show-preview="false"  size="small" />
+                </div>                          
+              </n-form-item>                                        
             </n-form>
           </div>
         </div>
@@ -210,7 +209,7 @@
   const model = ref({
     errorCorrectLevel: '1',
     typeNumber: '-1',
-    data:'https://linux.do',
+    data:'1234567',
     size: 200,
     margin: 2,
     useDynamicSize:true,

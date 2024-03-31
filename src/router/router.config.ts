@@ -14,7 +14,15 @@ const constantRoutes: RouteRecordRaw[] = [
     name: 'Decode',
     component: () => import('@/views/decode/index.vue'),
     meta: {
-      title: '二维码解码'
+      title: '解码'
+    }
+  },
+  {
+    path: '/document',
+    name: 'Document',
+    component: () => import('@/views/document/index.vue'),
+    meta: {
+      title: 'QR码知识'
     }
   },
 ]

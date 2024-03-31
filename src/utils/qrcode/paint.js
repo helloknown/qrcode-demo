@@ -356,6 +356,9 @@ export function paintDarkBlock(instance) {
     moduleCount,
     darkBlockColor
   } = instance;
+  let formatInfoCoordinates = [];
+  var darkBlockItem;
+  var darkBlockItem1;  
 
   var darkBlockItem = modules[moduleCount - 7 - 1][8];
   darkBlockItem.type.push('darkBlock');
