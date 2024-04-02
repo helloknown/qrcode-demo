@@ -6,3 +6,5 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # 将前端项目的静态文件复制到 Nginx 默认目录
 COPY dist /usr/share/nginx/html
+
+EXPOSE 5568

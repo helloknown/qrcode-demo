@@ -366,7 +366,7 @@ export function paintDarkBlock(instance) {
     if (i < 6) {
       darkBlockItem = modules[i][8];
       darkBlockItem.type.push('darkBlock');
-      if (!darkBlockItem.isBlack) {
+      if (darkBlockItem.isBlack) {
         darkBlockItem.color = darkBlockColor;
       } else {
         darkBlockItem.color = formatBackgroundColor;
@@ -374,7 +374,7 @@ export function paintDarkBlock(instance) {
     } else if (i < 8) {
       darkBlockItem = modules[i + 1][8];
       darkBlockItem.type.push('darkBlock');
-      if (!darkBlockItem.isBlack) {
+      if (darkBlockItem.isBlack) {
         darkBlockItem.color = darkBlockColor;
       } else {
         darkBlockItem.color = formatBackgroundColor;
@@ -382,7 +382,7 @@ export function paintDarkBlock(instance) {
     } else {
       darkBlockItem = modules[moduleCount - 15 + i][8];
       darkBlockItem.type.push('darkBlock');
-      if (!darkBlockItem.isBlack) {
+      if (darkBlockItem.isBlack) {
         darkBlockItem.color = darkBlockColor;
       } else {
         darkBlockItem.color = formatBackgroundColor;
@@ -395,7 +395,7 @@ export function paintDarkBlock(instance) {
     if (i < 8) {
       darkBlockItem = modules[8][moduleCount - i - 1];
       darkBlockItem.type.push('darkBlock');
-      if (!darkBlockItem.isBlack) {
+      if (darkBlockItem.isBlack) {
         darkBlockItem.color = darkBlockColor;
       } else {
         darkBlockItem.color = formatBackgroundColor;
@@ -404,7 +404,7 @@ export function paintDarkBlock(instance) {
     } else if (i < 9) {
       darkBlockItem = modules[8][15 - i - 1 + 1];
       darkBlockItem.type.push('darkBlock');
-      if (!darkBlockItem.isBlack) {
+      if (darkBlockItem.isBlack) {
         darkBlockItem.color = darkBlockColor;
       } else {
         darkBlockItem.color = formatBackgroundColor;
@@ -412,7 +412,7 @@ export function paintDarkBlock(instance) {
     } else {
       darkBlockItem = modules[8][15 - i - 1];
       darkBlockItem.type.push('darkBlock');
-      if (!darkBlockItem.isBlack) {
+      if (darkBlockItem.isBlack) {
         darkBlockItem.color = darkBlockColor;
       } else {
         darkBlockItem.color = formatBackgroundColor;
@@ -422,11 +422,12 @@ export function paintDarkBlock(instance) {
 
   darkBlockItem = modules[moduleCount - 8][8];
   darkBlockItem.type.push('darkBlock');
-  if (!darkBlockItem.isBlack) {
-    darkBlockItem.color = darkBlockColor;
-  } else {
-    darkBlockItem.color = formatBackgroundColor;
-  }
+  darkBlockItem.color = darkBlockColor;
+  // if (!darkBlockItem.isBlack) {
+  //   darkBlockItem.color = darkBlockColor;
+  // } else {
+  //   darkBlockItem.color = formatBackgroundColor;
+  // }
 }
 
 export function paintTypeNumber(instance) {

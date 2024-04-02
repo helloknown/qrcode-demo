@@ -20,9 +20,13 @@
                   <div class="flex-col">
                     <p >QR 码由定位标识、时序型圆点、功能图形和数据区组成。编码信息时，数据被分成块，每个块通过数据编码方式转换成二进制数据，再按照 QR 码规范进行排列。</p>
                     <p>QR 码最大特征为其左上，右上，左下三个大型的如同“回”字的黑白间同心方图案，为 QR 码识别定位标记，失去其中一个会影响识别。</p>
+                    <p>二维码版本如果版本大于等于7，需要添加版本信息。</p>
+                    <p>格式信息包含纠错等级和掩码图案信息。</p>
+                    <p>而呈棋盘般分布的有别于大定位标记的较小的同心方则为其校正标记，用于校正识别。</p>
+                    <p>版本1没有校正标记，版本2在右下方，其中心点在左下和右上定位标记的外边框的相交点。</p>
+                    <p>版本10开始以每个等距的方式出现在右下校正点至左下和右上定位标记的外边框的连线、左上与左下定位标记的外边框的连线、左上与右上定位标记的外边框的连线之间、这四边线上等距点对边相连线，版本10等距有1个，版本25为3个，版本40为5个。</p>
                   </div>
-                  <n-image src="/src/assets/icons/svg/QRStruct.svg" :width="isMobile? '360px':'540px'" :show-toolbar="false"/>
-                  <!-- <SvgIcon name="svg-QRStruct" size="460px" :color="isDark ? '#fff' : '#666'" /> -->
+                  <n-image src="/image/QRStruct.svg" :width="isMobile? '360px':'540px'" :show-toolbar="false"/>
                 </div>
               </n-collapse-item>
               <n-collapse-item title="QR 码可以用黑白以外的颜色（红色、蓝色等）吗？" name="5">
@@ -133,19 +137,13 @@
   </template>
   
   <script setup lang="ts">
-  import { useDark } from '@vueuse/core';
   import { DataTableColumns } from 'naive-ui'
   import { useAppStore } from '@/store'
 
   import dataJson from './data.js'
 
-  const isDark = useDark()
   const appStore = useAppStore()
   const isMobile = appStore.isMobile
-  
-  const pagination = ref({
-    pageSize: 10
-  })
 
   type RowData = {
     key: number
